@@ -5,7 +5,7 @@ Summary(pl):	Program pocztowy elm
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.3
-Release:	6
+Release:	7
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pt):	Aplicações/Correio Eletrônico
@@ -16,6 +16,7 @@ Patch0:		elm-config.patch.gz
 Patch1:		elm-temp-mbox.patch
 Patch2:		elm-y2k.patch
 Patch3:		elm-answer.patch
+Patch4:		elm-security.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
@@ -59,6 +60,7 @@ saðlar.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 mkdir -p bin
