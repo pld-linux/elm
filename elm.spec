@@ -15,7 +15,7 @@ Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-config.patch.gz
 Patch1:		%{name}-y2k.patch
-Patch2:		%{name}-answer.patch
+#Patch2:	%{name}-answer.patch
 Patch3:		%{name}-security.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
@@ -58,7 +58,7 @@ saðlar.
 %setup -q -n %{name}%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 %patch3 -p1
 
 %build
