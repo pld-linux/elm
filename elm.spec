@@ -9,7 +9,7 @@ Summary(tr):	e-posta okuma yazЩlЩmЩ
 Summary(uk):	поштова програма elm
 Name:		elm
 Version:	2.5.7
-Release:	2
+Release:	3
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
@@ -97,6 +97,7 @@ Elm все ще використову╓ться деякими його шанувальниками, хоча розвиток
 
 %build
 mkdir -p bin
+sh ./Makefile.SH
 %{__make} OPTIMIZE="%{rpmcflags} -DI_STDARG" CC="%{__cc}"
 
 %install
