@@ -1,0 +1,66 @@
+--- elm2.5.2/src/expires.c.old	Fri Sep 29 12:42:07 1995
++++ elm2.5.2/src/expires.c	Sat Jan  1 09:31:32 2000
+@@ -46,6 +46,7 @@
+ 	time_t thetime;
+ 	char word1[WLEN], word2[WLEN], word3[WLEN], word4[WLEN], word5[WLEN];
+ 	int  month = 0, day = 0, year = 0, hour = 0, minute = 0, items;
++	int bad_year = FALSE;
+ #ifndef	_POSIX_SOURCE
+ 	struct tm *localtime();
+ 	time_t time();
+@@ -87,6 +88,7 @@
+ 	  day   = atoi(word1);
+ 	  month = month_number(word2);
+ 	  year  = atoi(word3);
++	  bad_year = !isdigit( *word3);
+ 	  sscanf(word4, "%02d%*c%02d",
+ 	       &hour, &minute);
+ 	}
+@@ -100,25 +102,35 @@
+ 	      month = month_number(word3);
+ 	      day   = atoi(word2);
+ 	      year  = atoi(word4);
++	      bad_year = !isdigit( *word4);
+ 	  } else {				   /* form #1 */
+ 	      month = month_number(word2);
+ 	      day   = atoi(word3);
+ 	      year  = atoi(word4);
++	      bad_year = !isdigit( *word4);
+ 	  }
+ 	}
+ 	else if (! isdigit(word1[0])) {		   /* form #3 */
+ 	  month = month_number(word1);
+ 	  day   = atoi(word2);
+ 	  year  = atoi(word3);
++	  bad_year = !isdigit( *word3);
+ 	}
+ 	else {					   /* form #4 */
+ 	  day   = atoi(word1);
+ 	  month = month_number(word2);
+ 	  year  = atoi(word3);
++	  bad_year = !isdigit( *word3);
+ 	}
+ 
+-	if (day == 0 || year == 0)
++	if (day == 0 || bad_year)
+ 	  return;			/* we didn't get a valid date */
++
++	if ( year < 69)
++	  year += 100;
++
++	if ( year >= 1900)
++	  year -= 1900;
+ 
+ 	/** next let's get the current time and date, please **/
+ 
+--- elm2.5.2/src/date.c.old	Mon Apr  5 08:03:12 1999
++++ elm2.5.2/src/date.c	Sat Jan  1 09:31:24 2000
+@@ -98,7 +98,7 @@
+ 
+         /* now, finally, build the actual date string */
+         the_time->tm_mday %= 32,
+-	strftime(buffer, SLEN, "%a, %d %B %y", the_time);
++	strftime(buffer, SLEN, "%a, %d %B %Y", the_time);
+ }
+ 
+ int
