@@ -5,7 +5,7 @@ Summary(pl):	Program pocztowy elm
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.3
-Release:	2
+Release:	6
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
@@ -14,6 +14,7 @@ Source1:	elm.desktop
 Patch0:		elm-config.patch.gz
 Patch1:		elm-temp-mbox.patch
 Patch2:		elm-y2k.patch
+Patch3:		elm-answer.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
@@ -28,12 +29,12 @@ standard mailhandling features, including MIME support via metamail.
 
 Elm is still used by some people, but is no longer in development. If
 you've used Elm before and you're devoted to it, you should install the
-elm package.  If you would like to use metamail's MIME support, you'll
+elm package. If you would like to use metamail's MIME support, you'll
 also need to install the metamail package.
 
 %description -l de
-ELM ist eines der beliebtesten Terminalmodus-Mailhandling-Programme.  Es ist
-ausgesprochen leistungsfähig, leicht zu bedienen und gut unterstützt.  Es
+ELM ist eines der beliebtesten Terminalmodus-Mailhandling-Programme. Es ist
+ausgesprochen leistungsfähig, leicht zu bedienen und gut unterstützt. Es
 stellt alle Mail-Handlingfunktionen bereit, die man sich nur wünscht,
 einschließlich MIME-Support (über Metamail).
 
@@ -57,6 +58,7 @@ biridir. Kullanýcýya mektuplarýný okuyabilmesi için basit bir ortam saðlar.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 mkdir -p bin
