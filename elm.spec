@@ -24,7 +24,7 @@ Patch2:		%{name}-security.patch
 Patch3:		%{name}-no-static-libcrypt.patch
 Patch4:		%{name}-makefile-fix.patch
 Patch5:		%{name}-tempnam.patch
-URL:		http://www.myxa.com/elm.html
+URL:		http://www.instinct.org/elm/
 BuildRequires:	ncurses-devel >= 5.0
 Requires:	metamail
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
