@@ -8,7 +8,7 @@ Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.6
 Release:	1
-License:	Distributable
+License:	distributable
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
