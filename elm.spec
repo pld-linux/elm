@@ -10,9 +10,6 @@ Version:	2.5.6
 Release:	1
 License:	distributable
 Group:		Applications/Mail
-Group(de):	Applikationen/Post
-Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
