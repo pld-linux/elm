@@ -1,7 +1,7 @@
 Summary:	The elm mail user agent
 Summary(pl):	Program pocztowy elm
 Name:		elm
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 Copyright:	distributable
 Group:		Applications/Mail
