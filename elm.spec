@@ -7,7 +7,7 @@ Summary(pt_BR):	Agente de mail ELM
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.6
-Release:	1
+Release:	2
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
@@ -72,7 +72,7 @@ saðlar.
 %patch2 -p1
 %patch3 -p0
 %patch4 -p0
-%patch5 -p1
+#%patch5 -p1
 
 %build
 mkdir -p bin
