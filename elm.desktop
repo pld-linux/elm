@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Elm
 Comment=ELectronic Mail reader
+Comment[no]=epostleser
 Comment[pl]=Program pocztowy Elm
+Comment[sv]=E-postläsare
 Exec=elm
 MiniIcon=mini-mail.xpm
 Icon=mail2.xpm
