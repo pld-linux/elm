@@ -15,7 +15,7 @@ Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
-Source2:	%{name}-non-english-man-pages.tar.bz2
+Source2:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-config.patch.gz
 Patch1:		%{name}-y2k.patch
 Patch2:		%{name}-security.patch
