@@ -7,3 +7,4 @@ MiniIcon=mini-mail.xpm
 Icon=mail2.xpm
 Terminal=true
 Type=Application
+# vi: encoding=utf-8
