@@ -8,6 +8,7 @@ Version:	2.5.3
 Release:	6
 Copyright:	distributable
 Group:		Applications/Mail
+Group(pt):	Aplicações/Correio Eletrônico
 Group(pl):	Aplikacje/Poczta
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	elm.desktop
@@ -26,30 +27,31 @@ Elm is a popular terminal mode email user agent. Elm includes all
 standard mailhandling features, including MIME support via metamail.
 
 Elm is still used by some people, but is no longer in development. If
-you've used Elm before and you're devoted to it, you should install the
-elm package. If you would like to use metamail's MIME support, you'll
-also need to install the metamail package.
+you've used Elm before and you're devoted to it, you should install
+the elm package. If you would like to use metamail's MIME support,
+you'll also need to install the metamail package.
 
 %description -l de
-ELM ist eines der beliebtesten Terminalmodus-Mailhandling-Programme. Es ist
-ausgesprochen leistungsfähig, leicht zu bedienen und gut unterstützt. Es
-stellt alle Mail-Handlingfunktionen bereit, die man sich nur wünscht,
-einschließlich MIME-Support (über Metamail).
+ELM ist eines der beliebtesten Terminalmodus-Mailhandling-Programme.
+Es ist ausgesprochen leistungsfähig, leicht zu bedienen und gut
+unterstützt. Es stellt alle Mail-Handlingfunktionen bereit, die man
+sich nur wünscht, einschließlich MIME-Support (über Metamail).
 
 %description -l fr
-ELM est l'un des programmes de gestion du courrier en mode texte les plus
-populaires. Il est puissant, facile à utiliser et a apprendre. Il a toutes
-les possibilités de gestion du courrier que vous attendez, y compris la
-gestion MIME (via metamail).
+ELM est l'un des programmes de gestion du courrier en mode texte les
+plus populaires. Il est puissant, facile à utiliser et a apprendre. Il
+a toutes les possibilités de gestion du courrier que vous attendez, y
+compris la gestion MIME (via metamail).
 
 %description -l pl
-Elm jest popularnym programem pocztowym dla terminali tekstowych. Obs³uguje
-wszystkie standardy pocztowe z MIME w³±cznie (¿eby z niego skorzystaæ musisz
-zainstalowaæ tak¿e pakiet metamail).
+Elm jest popularnym programem pocztowym dla terminali tekstowych.
+Obs³uguje wszystkie standardy pocztowe z MIME w³±cznie (¿eby z niego
+skorzystaæ musisz zainstalowaæ tak¿e pakiet metamail).
 
 %description -l tr
 ELM, en yaygýn kullanýlan, metin ekran tabanlý e-posta yazýlýmlarýndan
-biridir. Kullanýcýya mektuplarýný okuyabilmesi için basit bir ortam saðlar.
+biridir. Kullanýcýya mektuplarýný okuyabilmesi için basit bir ortam
+saðlar.
 
 %prep
 %setup -q -n %{name}%{version}
