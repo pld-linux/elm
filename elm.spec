@@ -19,9 +19,7 @@ URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
 Requires:	metamail
-BuildRoot:	/tmp/%{name}-%{version}-root
-
-%define		_applnkdir	/usr/X11R6/share/applnk
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Elm is a popular terminal mode email user agent. Elm includes all
