@@ -9,7 +9,7 @@ Summary(tr):	e-posta okuma yazЩlЩmЩ
 Summary(uk):	поштова програма elm
 Name:		elm
 Version:	2.5.7
-Release:	1
+Release:	2
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
