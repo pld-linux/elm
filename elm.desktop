@@ -2,6 +2,8 @@
 Name=Elm
 Comment=ELectronic Mail reader
 Comment[pl]=Program pocztowy Elm
-Exec=xterm -e elm
-Terminal=0
+Exec=elm
+MiniIcon=mini-mail.xpm
+Icon=mail2.xpm
+Terminal=true
 Type=Application
