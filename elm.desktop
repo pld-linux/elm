@@ -10,4 +10,5 @@ Icon=elm.png
 Exec=elm
 Terminal=true
 Type=Application
+Encoding=UTF-8
 # vi: encoding=utf-8
