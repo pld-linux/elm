@@ -67,7 +67,7 @@ make OPTIMIZE="$RPM_OPT_FLAGS"
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/man1} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Networking/Mail
+	$RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
 make	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
@@ -85,7 +85,7 @@ ln -sf frm 	$RPM_BUILD_ROOT%{_bindir}/nfrm
 rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Networking/Mail
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* || :
 
@@ -103,4 +103,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/elm
 %{_mandir}/man1/*
 
-%{_applnkdir}/Networking/Mail/elm.desktop
+%{_applnkdir}/Network/Mail/elm.desktop
