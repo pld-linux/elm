@@ -1,12 +1,14 @@
 Summary:	The elm mail user agent
 Summary(de):	ELM-Mail-User-Agent
+Summary(es):	Agente de mail ELM
 Summary(fr):	Agent courrier ELM
 Summary(pl):	Program pocztowy elm
+Summary(pt_BR):	Agente de mail ELM
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
-Version:	2.5.4
-Release:	3
-Copyright:	distributable
+Version:	2.5.6
+Release:	1
+License:	Distributable
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
@@ -16,10 +18,10 @@ Source1:	%{name}.desktop
 Source2:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-config.patch.gz
 Patch1:		%{name}-y2k.patch
-#Patch2:	%{name}-answer.patch
-Patch3:		%{name}-security.patch
-Patch4:		%{name}-no-static-libcrypt.patch
-Patch5:		%{name}-makefile-fix.patch
+Patch2:		%{name}-security.patch
+Patch3:		%{name}-no-static-libcrypt.patch
+Patch4:		%{name}-makefile-fix.patch
+Patch5:		%{name}-tempnam.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 Requires:	metamail
@@ -40,6 +42,11 @@ Es ist ausgesprochen leistungsfähig, leicht zu bedienen und gut
 unterstützt. Es stellt alle Mail-Handlingfunktionen bereit, die man
 sich nur wünscht, einschließlich MIME-Support (über Metamail).
 
+%description -l es
+ELM es un popular lector de mail en modo terminal. Es potente, fácil
+de usar y de conseguir ayuda. Posee todas las características que se
+podría esperar, incluso soporte a MINE (vía metamail).
+
 %description -l fr
 ELM est l'un des programmes de gestion du courrier en mode texte les
 plus populaires. Il est puissant, facile à utiliser et a apprendre. Il
@@ -51,6 +58,11 @@ Elm jest popularnym programem pocztowym dla terminali tekstowych.
 Obs³uguje wszystkie standardy pocztowe z MIME w³±cznie (¿eby z niego
 skorzystaæ musisz zainstalowaæ tak¿e pakiet metamail).
 
+%description -l pt_BR
+ELM é um popular leitor de mail em modo terminal. É poderoso, fácil de
+usar e fácil de conseguir ajuda. Possui todas as características que
+você poderia esperar, inclusive suporte a MINE (via metamail).
+
 %description -l tr
 ELM, en yaygýn kullanýlan, metin ekran tabanlý e-posta yazýlýmlarýndan
 biridir. Kullanýcýya mektuplarýný okuyabilmesi için basit bir ortam
@@ -60,14 +72,14 @@ saðlar.
 %setup -q -n %{name}%{version}
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p1
-%patch3 -p1
+%patch2 -p1
+%patch3 -p0
 %patch4 -p0
-%patch5 -p0
+%patch5 -p1
 
 %build
 mkdir -p bin
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} OPTIMIZE="%{rpmcflags}" CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
