@@ -98,6 +98,7 @@ Elm все ще використову╓ться деякими його шанувальниками, хоча розвиток
 %build
 mkdir -p bin
 sh ./Makefile.SH
+sh ./doc/Makefile.SH
 %{__make} OPTIMIZE="%{rpmcflags} -DI_STDARG" CC="%{__cc}"
 
 %install
