@@ -14,10 +14,9 @@ Group(pt):	Aplicações/Correio Eletrônico
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-config.patch.gz
-Patch1:		%{name}-temp-mbox.patch
-Patch2:		%{name}-y2k.patch
-Patch3:		%{name}-answer.patch
-Patch4:		%{name}-security.patch
+Patch1:		%{name}-y2k.patch
+Patch2:		%{name}-answer.patch
+Patch3:		%{name}-security.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
@@ -61,7 +60,6 @@ saðlar.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 mkdir -p bin
