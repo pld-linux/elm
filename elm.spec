@@ -5,7 +5,7 @@ Summary(pl):	Program pocztowy elm
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.4
-Release:	1
+Release:	2
 Copyright:	distributable
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
@@ -13,13 +13,15 @@ Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
+Source2:	%{name}-non-english-man-pages.tar.gz
 Patch0:		%{name}-config.patch.gz
 Patch1:		%{name}-y2k.patch
 #Patch2:	%{name}-answer.patch
 Patch3:		%{name}-security.patch
+Patch4:		%{name}-no-static-libcrypt.patch
+Patch5:		%{name}-makefile-fix.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	glibc-static
 Requires:	metamail
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,6 +62,8 @@ saðlar.
 %patch1 -p1
 #%patch2 -p1
 %patch3 -p1
+%patch4 -p0
+%patch5 -p0
 
 %build
 mkdir -p bin
@@ -67,7 +71,7 @@ mkdir -p bin
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/man1} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/{man1,pl/man1}} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
 %{__make} DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
@@ -87,18 +91,21 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
+tar xzf %{SOURCE2} -C $RPM_BUILD_ROOT%{_mandir}
 
-gzip -9nf Changes Overview README BUGS
+gzip -9nf Changes Overview README # BUGS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {Changes,Overview,README,BUGS}.gz
+%doc {Changes,Overview,README}.gz
 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/elm
 %{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
+%lang(fi) %{_mandir}/fi/man1/*
 
 %{_applnkdir}/Network/Mail/elm.desktop
