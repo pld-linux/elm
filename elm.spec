@@ -8,15 +8,16 @@ Version:	2.5.3
 Release:	9
 Copyright:	distributable
 Group:		Applications/Mail
-Group(pt):	Aplicações/Correio Eletrônico
+Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
+Group(pt):	Aplicações/Correio Eletrônico
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
-Source1:	elm.desktop
-Patch0:		elm-config.patch.gz
-Patch1:		elm-temp-mbox.patch
-Patch2:		elm-y2k.patch
-Patch3:		elm-answer.patch
-Patch4:		elm-security.patch
+Source1:	%{name}.desktop
+Patch0:		%{name}-config.patch.gz
+Patch1:		%{name}-temp-mbox.patch
+Patch2:		%{name}-y2k.patch
+Patch3:		%{name}-answer.patch
+Patch4:		%{name}-security.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
@@ -64,14 +65,14 @@ saðlar.
 
 %build
 mkdir -p bin
-%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/man1} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
-make	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
+%{__make} DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
 	DESTLIB=$RPM_BUILD_ROOT%{_datadir}/elm \
 	LIB=$RPM_BUILD_ROOT%{_datadir}/elm \
@@ -89,10 +90,7 @@ rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* || :
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	Changes Overview README BUGS
+gzip -9nf Changes Overview README BUGS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
