@@ -92,7 +92,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/{man1,pl/man1}}
 
 echo .so frm.1 > $RPM_BUILD_ROOT%{_mandir}/man1/nfrm.1
 
-ln -sf newmail	$RPM_BUILD_ROOT%{_bindir}/wnewmail 
+ln -sf newmail	$RPM_BUILD_ROOT%{_bindir}/wnewmail
 ln -sf frm 	$RPM_BUILD_ROOT%{_bindir}/nfrm
 
 # mmencode is provided by metamail package
