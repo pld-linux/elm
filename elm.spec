@@ -9,7 +9,7 @@ Summary(tr):	e-posta okuma yazЩlЩmЩ
 Summary(uk):	поштова програма elm
 Name:		elm
 Version:	2.5.7
-Release:	3
+Release:	4
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
@@ -106,7 +106,7 @@ sh ./doc/Makefile.SH
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/{man1,pl/man1}} \
-	$RPM_BUILD_ROOT{%{_applnkdir}/Network/Mail,%{_pixmapsdir}}
+	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
@@ -125,7 +125,7 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -141,5 +141,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_mandir}/pl/man1/*
 %lang(fi) %{_mandir}/fi/man1/*
 
-%{_applnkdir}/Network/Mail/elm.desktop
+%{_desktopdir}/elm.desktop
 %{_pixmapsdir}/*
