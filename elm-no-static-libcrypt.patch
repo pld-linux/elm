@@ -1,0 +1,33 @@
+--- lib/Makefile.old	Thu Oct  4 00:03:15 2001
++++ lib/Makefile	Thu Oct  4 00:03:43 2001
+@@ -211,7 +211,7 @@
+ INCLS		= -I.. -I$(INCLDIR)
+ CFLAGS		= $(CCFLAGS) $(OPTIMIZE) $(DEBUG) $(INCLS)
+ LFLAGS		=  
+-LIBS		= /usr/lib/libcrypt.a -lncurses
++LIBS		= -lcrypt -lncurses
+ LINTFLAGS	= $(INCLS)
+ 
+ AR		= ar
+--- src/Makefile~	Thu Oct  4 00:06:29 2001
++++ src/Makefile	Thu Oct  4 00:08:58 2001
+@@ -133,7 +133,7 @@
+ INCLS		= -I.. -I$(INCLDIR)
+ CFLAGS		= $(CCFLAGS) $(OPTIMIZE) $(DEBUG) $(INCLS)
+ LFLAGS		=  
+-LIBS		=  /usr/lib/libcrypt.a -lncurses
++LIBS		= -lcrypt -lncurses
+ LINTFLAGS	= $(INCLS)
+ 
+ AR		= ar
+--- utils/Makefile~	Thu Oct  4 00:28:10 2001
++++ utils/Makefile	Thu Oct  4 00:29:49 2001
+@@ -203,7 +203,7 @@
+ INCLS		= -I.. -I$(INCLDIR)
+ CFLAGS		= $(CCFLAGS) $(OPTIMIZE) $(DEBUG) $(INCLS)
+ LFLAGS		=  
+-LIBS		=  /usr/lib/libcrypt.a -lncurses
++LIBS		= -lcrypt -lncurses
+ LINTFLAGS	= $(INCLS)
+ 
+ AR		= ar
