@@ -8,12 +8,12 @@ Summary(ru):	Почтовая программа elm
 Summary(tr):	e-posta okuma yazЩlЩmЩ
 Summary(uk):	поштова програма elm
 Name:		elm
-Version:	2.5.6
-Release:	4
+Version:	2.5.7
+Release:	1
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
-# Source0-md5:	5ce17b50cb90f99ffc09e4df52f52648
+# Source0-md5:	47bb6d6af6dceda4108076507baa99ba
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	b8891e4d62117163025e594e6608f747
 Source2:	%{name}.desktop
@@ -97,7 +97,7 @@ Elm все ще використову╓ться деякими його шанувальниками, хоча розвиток
 
 %build
 mkdir -p bin
-%{__make} OPTIMIZE="%{rpmcflags}" CC="%{__cc}"
+%{__make} OPTIMIZE="%{rpmcflags} -DI_STDARG" CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
