@@ -64,7 +64,7 @@ saðlar.
 
 %build
 mkdir -p bin
-make OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
