@@ -1,0 +1,13 @@
+diff -ur elm2.5.1/src/newmbox.c elm2.5.1.new/src/newmbox.c
+--- elm2.5.1/src/newmbox.c	Wed Mar 24 15:22:09 1999
++++ elm2.5.1.new/src/newmbox.c	Fri Nov 19 13:54:05 1999
+@@ -247,7 +247,8 @@
+ 	sprintf(tempfn, "%s%s", default_temp, temp_mbox);
+         cp = basename(mbox);
+ 	if (strcmp(cp, "mbox") == 0 || strcmp(cp, "mailbox") == 0 ||
+-		strcmp(cp, "inbox") == 0 || *cp == '.')
++		strcmp(cp, "inbox") == 0 || strcmp(cp, "Mailbox") == 0 ||
++		*cp == '.')
+ 	    strcat(tempfn, user_name);
+ 	  else
+ 	    strcat(tempfn, cp);
