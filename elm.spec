@@ -1,17 +1,21 @@
 Summary:	The elm mail user agent
 Summary(pl):	Program pocztowy elm
 Name:		elm
-Version:	2.5.0
-Release:	0.3pre8
+Version:	2.5.1
+Release:	2
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
-Url:		http://www.myxa.com/elm.html
-Source0:	ftp://dsinc.myxa.com/pub/elm/elm2.5.0pre8.tar.gz
-Source1:	elm.wmconfig
-Patch0:		elm-2.5.0pre8-config.patch.gz
-Patch1:		elm-2.5.0pre8-compat21.patch
+Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
+Source1:	elm.desktop
+Patch:		elm-config.patch.gz
+URL:		http://www.myxa.com/elm.html
+BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	glibc-static
+Requires:	metamail
 BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_applnkdir	/usr/X11R6/share/applnk
 
 %description
 Elm is a popular terminal mode email user agent. Elm includes all
@@ -30,19 +34,17 @@ zainstalowaæ tak¿e pakiet metamail).
 Elm jest wci±¿ powszechnnie u¿ywany, ale nie jest ju¿ rozwijany.
 
 %prep
-%setup -q -n elm2.5.0pre8
+%setup -q -n %{name}%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 mkdir -p bin
-make	# XXX This make to rerun Makefile.SH everywhere ...
-make	# XXX ... and this make to buils.
-strip bin/* || :
+make OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/man1}
+install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/man1} \
+	$RPM_BUILD_ROOT%{_applnkdir}/Networking/Mail
 
 make	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
@@ -51,46 +53,27 @@ make	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
 	MAN=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	install
 
-( cd $RPM_BUILD_ROOT
-  install -d ./etc/X11/wmconfig
-  install -m 644 $RPM_SOURCE_DIR/elm.wmconfig ./etc/X11/wmconfig/elm
-)
+echo .so frm.1 > $RPM_BUILD_ROOT%{_mandir}/man1/nfrm.1
+
+ln -sf newmail	$RPM_BUILD_ROOT%{_bindir}/wnewmail 
+ln -sf frm 	$RPM_BUILD_ROOT%{_bindir}/nfrm
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Networking/Mail
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* || :
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	Changes Overview README BUGS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config(missingok) /etc/X11/wmconfig/elm
-%attr(755,root,root) %{_bindir}/elm
-%attr(755,root,root) %{_bindir}/answer
-%attr(755,root,root) %{_bindir}/checkalias
-%attr(755,root,root) %{_bindir}/elmalias
-%attr(755,root,root) %{_bindir}/fastmail
-%attr(755,root,root) %{_bindir}/frm
-%attr(755,root,root) %{_bindir}/listalias
-%attr(755,root,root) %{_bindir}/messages
-%attr(755,root,root) %{_bindir}/newalias
-%attr(755,root,root) %{_bindir}/newmail
-%attr(755,root,root) %{_bindir}/printmail
-%attr(755,root,root) %{_bindir}/readmsg
-%attr(755,root,root) %{_bindir}/wnewmail
-%attr(755,root,root) %{_bindir}/nfrm
+%doc {Changes,Overview,README,BUGS}.gz
+
+%attr(755,root,root) %{_bindir}/*
 %{_datadir}/elm
-%{_mandir}/man1/answer.1.gz
-%{_mandir}/man1/checkalias.1.gz
-%{_mandir}/man1/elm.1.gz
-%{_mandir}/man1/elmalias.1.gz
-%{_mandir}/man1/fastmail.1.gz
-%{_mandir}/man1/frm.1.gz
-%{_mandir}/man1/listalias.1.gz
-%{_mandir}/man1/messages.1.gz
-%{_mandir}/man1/newalias.1.gz
-%{_mandir}/man1/newmail.1.gz
-%{_mandir}/man1/printmail.1.gz
-%{_mandir}/man1/readmsg.1.gz
-%{_mandir}/man1/wnewmail.1.gz
+%{_mandir}/man1/*
+
+%{_applnkdir}/Networking/Mail/elm.desktop
