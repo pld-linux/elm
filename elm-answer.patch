@@ -1,0 +1,32 @@
+--- elm2.5.3/utils/answer.c.sopwith	Thu Feb  3 14:14:23 2000
++++ elm2.5.3/utils/answer.c	Thu Feb  3 14:38:28 2000
+@@ -301,7 +301,7 @@
+ 	static char sprbuffer[VERY_LONG_STRING];
+ 	datum  key, value;
+ 	int    loc;
+-	struct alias_rec entry;
++	struct alias_disk_rec entry;
+ 
+ 	name = shift_lower(name);
+ 	key.dptr = name;
+@@ -312,16 +312,16 @@
+ 
+ 	bcopy(value.dptr, (char *) &loc, sizeof(loc));
+ 	loc -= sizeof(entry);
+-	lseek(user_data, loc, 0L);
++	lseek(user_data, loc, SEEK_SET);
+ 	read(user_data, (char *) &entry, sizeof(entry));
+ 	read(user_data, buffer, entry.length > VERY_LONG_STRING ? VERY_LONG_STRING : entry.length);
+ 	if ((entry.type & GROUP) != 0 && mailing) {
+-	    if (expand_group(sprbuffer, buffer + (int) entry.address,
++	    if (expand_group(sprbuffer, buffer + entry.address,
+ 			     depth) < 0)
+ 		return NULL;
+ 	} else {
+-	    sprintf(sprbuffer, "%s (%s)", buffer + (int) entry.address,
+-		    buffer + (int) entry.name);
++	    sprintf(sprbuffer, "%s (%s)", buffer + entry.address,
++		    buffer + entry.name);
+ 	}
+ 	return sprbuffer;
+ }
