@@ -2,7 +2,7 @@ Summary:	The elm mail user agent
 Summary(pl):	Program pocztowy elm
 Name:		elm
 Version:	2.5.1
-Release:	2
+Release:	3
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
@@ -57,6 +57,10 @@ echo .so frm.1 > $RPM_BUILD_ROOT%{_mandir}/man1/nfrm.1
 
 ln -sf newmail	$RPM_BUILD_ROOT%{_bindir}/wnewmail 
 ln -sf frm 	$RPM_BUILD_ROOT%{_bindir}/nfrm
+
+# mmencode is provided by metamail package
+rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Networking/Mail
 
