@@ -13,7 +13,9 @@ Release:	4
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
+# Source0-md5:	5ce17b50cb90f99ffc09e4df52f52648
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+# Source1-md5:	b8891e4d62117163025e594e6608f747
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Patch0:		%{name}-config.patch.gz
