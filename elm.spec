@@ -4,15 +4,18 @@ Summary(es):	Agente de mail ELM
 Summary(fr):	Agent courrier ELM
 Summary(pl):	Program pocztowy elm
 Summary(pt_BR):	Agente de mail ELM
+Summary(ru):	Почтовая программа elm
 Summary(tr):	e-posta okuma yazЩlЩmЩ
+Summary(uk):	поштова програма elm
 Name:		elm
 Version:	2.5.6
-Release:	2
+Release:	3
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
-Source1:	%{name}.desktop
-Source2:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+Source2:	%{name}.desktop
+Source3:	%{name}.png
 Patch0:		%{name}-config.patch.gz
 Patch1:		%{name}-y2k.patch
 Patch2:		%{name}-security.patch
@@ -60,10 +63,26 @@ ELM И um popular leitor de mail em modo terminal. и poderoso, fАcil de
 usar e fАcil de conseguir ajuda. Possui todas as caracterМsticas que
 vocЙ poderia esperar, inclusive suporte a MINE (via metamail).
 
+%description -l ru
+Elm - это популярная терминальная почтовая программа. Elm включает все
+стандартные возможности работы с почтой, включая поддержку MIME через
+metamail.
+
+Elm по-прежнему используется некоторыми его любителями, хотя развитие
+его прекратилось.
+
 %description -l tr
 ELM, en yaygЩn kullanЩlan, metin ekran tabanlЩ e-posta yazЩlЩmlarЩndan
 biridir. KullanЩcЩya mektuplarЩnЩ okuyabilmesi iГin basit bir ortam
 saПlar.
+
+%description -l uk
+Elm - це популярна терм╕нальна поштова програма. Elm м╕стить ус╕
+стандартн╕ можливост╕ роботи з поштою, включаючи п╕дтримку MIME через
+metamail.
+
+Elm все ще використову╓ться деякими його шанувальниками, хоча розвиток
+його припинено.
 
 %prep
 %setup -q -n %{name}%{version}
@@ -81,14 +100,14 @@ mkdir -p bin
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/elm,%{_mandir}/{man1,pl/man1}} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
+	$RPM_BUILD_ROOT{%{_applnkdir}/Network/Mail,%{_pixmapsdir}}
 
-%{__make} DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
+%{__make} install \
+	DESTBIN=$RPM_BUILD_ROOT%{_bindir} \
 	BIN=$RPM_BUILD_ROOT%{_bindir} \
 	DESTLIB=$RPM_BUILD_ROOT%{_datadir}/elm \
 	LIB=$RPM_BUILD_ROOT%{_datadir}/elm \
-	MAN=$RPM_BUILD_ROOT%{_mandir}/man1 \
-	install
+	MAN=$RPM_BUILD_ROOT%{_mandir}/man1
 
 echo .so frm.1 > $RPM_BUILD_ROOT%{_mandir}/man1/nfrm.1
 
@@ -99,17 +118,16 @@ ln -sf frm 	$RPM_BUILD_ROOT%{_bindir}/nfrm
 rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
-bzip2 -dc %{SOURCE2} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
-
-gzip -9nf Changes Overview README # BUGS
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {Changes,Overview,README}.gz
+%doc Changes Overview README
 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/elm
@@ -118,3 +136,4 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fi) %{_mandir}/fi/man1/*
 
 %{_applnkdir}/Network/Mail/elm.desktop
+%{_pixmapsdir}/*
