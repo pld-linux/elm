@@ -5,7 +5,7 @@ Summary(pl):	Program pocztowy elm
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
 Version:	2.5.3
-Release:	8
+Release:	9
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pt):	Aplicações/Correio Eletrônico
