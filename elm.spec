@@ -4,8 +4,8 @@ Summary(fr):	Agent courrier ELM
 Summary(pl):	Program pocztowy elm
 Summary(tr):	e-posta okuma yazýlýmý
 Name:		elm
-Version:	2.5.3
-Release:	9
+Version:	2.5.4
+Release:	1
 Copyright:	distributable
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
