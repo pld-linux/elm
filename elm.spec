@@ -1,9 +1,11 @@
-Summary:	The elm mail user agent.
+Summary:	The elm mail user agent
+Summary(pl):	Program pocztowy elm
 Name:		elm
 Version:	2.5.0
 Release:	0.3pre8
 Copyright:	distributable
 Group:		Applications/Mail
+Group(pl):	Aplikacje/Poczta
 Url:		http://www.myxa.com/elm.html
 Source0:	ftp://dsinc.myxa.com/pub/elm/elm2.5.0pre8.tar.gz
 Source1:	elm.wmconfig
@@ -19,6 +21,13 @@ Elm is still used by some people, but is no longer in development. If
 you've used Elm before and you're devoted to it, you should install the
 elm package.  If you would like to use metamail's MIME support, you'll
 also need to install the metamail package.
+
+%description -l pl
+Elm jest popularnym programem pocztowym dla terminali tekstowych. Obs³uguje
+wszystkie standardy pocztowe z MIME w³±cznie (¿eby z niego skorzystaæ musisz
+zainstalowaæ tak¿e pakiet metamail).
+
+Elm jest wci±¿ powszechnnie u¿ywany, ale nie jest ju¿ rozwijany.
 
 %prep
 %setup -q -n elm2.5.0pre8
