@@ -2,13 +2,14 @@ Summary:	The elm mail user agent
 Summary(pl):	Program pocztowy elm
 Name:		elm
 Version:	2.5.1
-Release:	3
+Release:	4
 Copyright:	distributable
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
 Source1:	elm.desktop
-Patch:		elm-config.patch.gz
+Patch0:		elm-config.patch.gz
+Patch1:		elm-temp-mbox.patch
 URL:		http://www.myxa.com/elm.html
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	glibc-static
@@ -36,6 +37,7 @@ Elm jest wci±¿ powszechnnie u¿ywany, ale nie jest ju¿ rozwijany.
 %prep
 %setup -q -n %{name}%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 mkdir -p bin
