@@ -91,7 +91,7 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/mmencode
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/mmencode.1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
-tar xzf %{SOURCE2} -C $RPM_BUILD_ROOT%{_mandir}
+bzip2 -dc %{SOURCE2} | tar xf - -C $RPM_BUILD_ROOT%{_mandir}
 
 gzip -9nf Changes Overview README # BUGS
 
