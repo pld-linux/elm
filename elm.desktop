@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Elm
 Comment=ELectronic Mail reader
-Comment[no]=epostleser
+Comment[no]=Epostleser
 Comment[pl]=Program pocztowy Elm
 Comment[sv]=E-postläsare
 Exec=elm
