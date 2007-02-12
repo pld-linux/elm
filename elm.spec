@@ -1,12 +1,12 @@
 Summary:	The elm mail user agent
-Summary(de.UTF-8):   ELM-Mail-User-Agent
-Summary(es.UTF-8):   Agente de mail ELM
-Summary(fr.UTF-8):   Agent courrier ELM
-Summary(pl.UTF-8):   Program pocztowy elm
-Summary(pt_BR.UTF-8):   Agente de mail ELM
-Summary(ru.UTF-8):   Почтовая программа elm
-Summary(tr.UTF-8):   e-posta okuma yazılımı
-Summary(uk.UTF-8):   поштова програма elm
+Summary(de.UTF-8):	ELM-Mail-User-Agent
+Summary(es.UTF-8):	Agente de mail ELM
+Summary(fr.UTF-8):	Agent courrier ELM
+Summary(pl.UTF-8):	Program pocztowy elm
+Summary(pt_BR.UTF-8):	Agente de mail ELM
+Summary(ru.UTF-8):	Почтовая программа elm
+Summary(tr.UTF-8):	e-posta okuma yazılımı
+Summary(uk.UTF-8):	поштова програма elm
 Name:		elm
 Version:	2.5.7
 Release:	4
