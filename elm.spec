@@ -1,12 +1,12 @@
 Summary:	The elm mail user agent
-Summary(de):	ELM-Mail-User-Agent
-Summary(es):	Agente de mail ELM
-Summary(fr):	Agent courrier ELM
-Summary(pl):	Program pocztowy elm
-Summary(pt_BR):	Agente de mail ELM
-Summary(ru):	Почтовая программа elm
-Summary(tr):	e-posta okuma yazЩlЩmЩ
-Summary(uk):	поштова програма elm
+Summary(de.UTF-8):   ELM-Mail-User-Agent
+Summary(es.UTF-8):   Agente de mail ELM
+Summary(fr.UTF-8):   Agent courrier ELM
+Summary(pl.UTF-8):   Program pocztowy elm
+Summary(pt_BR.UTF-8):   Agente de mail ELM
+Summary(ru.UTF-8):   п÷п╬я┤я┌п╬п╡п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟ elm
+Summary(tr.UTF-8):   e-posta okuma yazд╠lд╠mд╠
+Summary(uk.UTF-8):   п©п╬я┬я┌п╬п╡п╟ п©я─п╬пЁя─п╟п╪п╟ elm
 Name:		elm
 Version:	2.5.7
 Release:	4
@@ -38,53 +38,53 @@ you've used Elm before and you're devoted to it, you should install
 the elm package. If you would like to use metamail's MIME support,
 you'll also need to install the metamail package.
 
-%description -l de
+%description -l de.UTF-8
 ELM ist eines der beliebtesten Terminalmodus-Mailhandling-Programme.
-Es ist ausgesprochen leistungsfДhig, leicht zu bedienen und gut
-unterstЭtzt. Es stellt alle Mail-Handlingfunktionen bereit, die man
-sich nur wЭnscht, einschlieъlich MIME-Support (Эber Metamail).
+Es ist ausgesprochen leistungsfц╓hig, leicht zu bedienen und gut
+unterstц╪tzt. Es stellt alle Mail-Handlingfunktionen bereit, die man
+sich nur wц╪nscht, einschlieц÷lich MIME-Support (ц╪ber Metamail).
 
-%description -l es
-ELM es un popular lector de mail en modo terminal. Es potente, fАcil
-de usar y de conseguir ayuda. Posee todas las caracterМsticas que se
-podrМa esperar, incluso soporte a MINE (vМa metamail).
+%description -l es.UTF-8
+ELM es un popular lector de mail en modo terminal. Es potente, fц║cil
+de usar y de conseguir ayuda. Posee todas las caracterц╜sticas que se
+podrц╜a esperar, incluso soporte a MINE (vц╜a metamail).
 
-%description -l fr
+%description -l fr.UTF-8
 ELM est l'un des programmes de gestion du courrier en mode texte les
-plus populaires. Il est puissant, facile Ю utiliser et a apprendre. Il
-a toutes les possibilitИs de gestion du courrier que vous attendez, y
+plus populaires. Il est puissant, facile ц═ utiliser et a apprendre. Il
+a toutes les possibilitц╘s de gestion du courrier que vous attendez, y
 compris la gestion MIME (via metamail).
 
-%description -l pl
+%description -l pl.UTF-8
 Elm jest popularnym programem pocztowym dla terminali tekstowych.
-ObsЁuguje wszystkie standardy pocztowe z MIME wЁ╠cznie (©eby z niego
-skorzystaФ musisz zainstalowaФ tak©e pakiet metamail).
+Obsе┌uguje wszystkie standardy pocztowe z MIME wе┌д┘cznie (е╪eby z niego
+skorzystaд┤ musisz zainstalowaд┤ takе╪e pakiet metamail).
 
-%description -l pt_BR
-ELM И um popular leitor de mail em modo terminal. и poderoso, fАcil de
-usar e fАcil de conseguir ajuda. Possui todas as caracterМsticas que
-vocЙ poderia esperar, inclusive suporte a MINE (via metamail).
+%description -l pt_BR.UTF-8
+ELM ц╘ um popular leitor de mail em modo terminal. ц┴ poderoso, fц║cil de
+usar e fц║cil de conseguir ajuda. Possui todas as caracterц╜sticas que
+vocц╙ poderia esperar, inclusive suporte a MINE (via metamail).
 
-%description -l ru
-Elm - это популярная терминальная почтовая программа. Elm включает все
-стандартные возможности работы с почтой, включая поддержку MIME через
+%description -l ru.UTF-8
+Elm - я█я┌п╬ п©п╬п©я┐п╩я▐я─п╫п╟я▐ я┌п╣я─п╪п╦п╫п╟п╩я▄п╫п╟я▐ п©п╬я┤я┌п╬п╡п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟. Elm п╡п╨п╩я▌я┤п╟п╣я┌ п╡я│п╣
+я│я┌п╟п╫п╢п╟я─я┌п╫я▀п╣ п╡п╬п╥п╪п╬п╤п╫п╬я│я┌п╦ я─п╟п╠п╬я┌я▀ я│ п©п╬я┤я┌п╬п╧, п╡п╨п╩я▌я┤п╟я▐ п©п╬п╢п╢п╣я─п╤п╨я┐ MIME я┤п╣я─п╣п╥
 metamail.
 
-Elm по-прежнему используется некоторыми его любителями, хотя развитие
-его прекратилось.
+Elm п©п╬-п©я─п╣п╤п╫п╣п╪я┐ п╦я│п©п╬п╩я▄п╥я┐п╣я┌я│я▐ п╫п╣п╨п╬я┌п╬я─я▀п╪п╦ п╣пЁп╬ п╩я▌п╠п╦я┌п╣п╩я▐п╪п╦, я┘п╬я┌я▐ я─п╟п╥п╡п╦я┌п╦п╣
+п╣пЁп╬ п©я─п╣п╨я─п╟я┌п╦п╩п╬я│я▄.
 
-%description -l tr
-ELM, en yaygЩn kullanЩlan, metin ekran tabanlЩ e-posta yazЩlЩmlarЩndan
-biridir. KullanЩcЩya mektuplarЩnЩ okuyabilmesi iГin basit bir ortam
-saПlar.
+%description -l tr.UTF-8
+ELM, en yaygд╠n kullanд╠lan, metin ekran tabanlд╠ e-posta yazд╠lд╠mlarд╠ndan
+biridir. Kullanд╠cд╠ya mektuplarд╠nд╠ okuyabilmesi iц╖in basit bir ortam
+saд÷lar.
 
-%description -l uk
-Elm - це популярна терм╕нальна поштова програма. Elm м╕стить ус╕
-стандартн╕ можливост╕ роботи з поштою, включаючи п╕дтримку MIME через
+%description -l uk.UTF-8
+Elm - я├п╣ п©п╬п©я┐п╩я▐я─п╫п╟ я┌п╣я─п╪я√п╫п╟п╩я▄п╫п╟ п©п╬я┬я┌п╬п╡п╟ п©я─п╬пЁя─п╟п╪п╟. Elm п╪я√я│я┌п╦я┌я▄ я┐я│я√
+я│я┌п╟п╫п╢п╟я─я┌п╫я√ п╪п╬п╤п╩п╦п╡п╬я│я┌я√ я─п╬п╠п╬я┌п╦ п╥ п©п╬я┬я┌п╬я▌, п╡п╨п╩я▌я┤п╟я▌я┤п╦ п©я√п╢я┌я─п╦п╪п╨я┐ MIME я┤п╣я─п╣п╥
 metamail.
 
-Elm все ще використову╓ться деякими його шанувальниками, хоча розвиток
-його припинено.
+Elm п╡я│п╣ я┴п╣ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■я┌я▄я│я▐ п╢п╣я▐п╨п╦п╪п╦ п╧п╬пЁп╬ я┬п╟п╫я┐п╡п╟п╩я▄п╫п╦п╨п╟п╪п╦, я┘п╬я┤п╟ я─п╬п╥п╡п╦я┌п╬п╨
+п╧п╬пЁп╬ п©я─п╦п©п╦п╫п╣п╫п╬.
 
 %prep
 %setup -q -n %{name}%{version}
