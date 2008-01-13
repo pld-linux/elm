@@ -12,7 +12,7 @@ Version:	2.5.7
 Release:	4
 License:	distributable
 Group:		Applications/Mail
-Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
+Source0:	http://www.instinct.org/elm/files/tarballs/%{name}%{version}.tar.gz
 # Source0-md5:	47bb6d6af6dceda4108076507baa99ba
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	b8891e4d62117163025e594e6608f747
