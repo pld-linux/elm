@@ -9,7 +9,7 @@ Summary(tr):	e-posta okuma yazЩlЩmЩ
 Summary(uk):	поштова програма elm
 Name:		elm
 Version:	2.5.7
-Release:	4
+Release:	5
 License:	distributable
 Group:		Applications/Mail
 Source0:	ftp://ftp.virginia.edu/pub/elm/%{name}%{version}.tar.gz
@@ -135,7 +135,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes Overview README
 
-%attr(755,root,root) %{_bindir}/*
+%attr(2755,root,mail) %{_bindir}/elm
+%attr(755,root,root) %{_bindir}/elmalias
+%attr(755,root,root) %{_bindir}/[!e]*
 %{_datadir}/elm
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
