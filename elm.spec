@@ -8,22 +8,21 @@ Summary(ru.UTF-8):	Почтовая программа elm
 Summary(tr.UTF-8):	e-posta okuma yazılımı
 Summary(uk.UTF-8):	поштова програма elm
 Name:		elm
-Version:	2.5.7
-Release:	4
+Version:	2.5.8
+Release:	1
 License:	distributable
 Group:		Applications/Mail
 Source0:	http://www.instinct.org/elm/files/tarballs/%{name}%{version}.tar.gz
-# Source0-md5:	47bb6d6af6dceda4108076507baa99ba
+# Source0-md5:	f7a721c1cddbc8632ffe0cf65b045395
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	b8891e4d62117163025e594e6608f747
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Patch0:		%{name}-config.patch.gz
-Patch1:		%{name}-y2k.patch
-Patch2:		%{name}-security.patch
-Patch3:		%{name}-no-static-libcrypt.patch
-Patch4:		%{name}-makefile-fix.patch
-Patch5:		%{name}-tempnam.patch
+Patch1:		%{name}-security.patch
+Patch2:		%{name}-no-static-libcrypt.patch
+Patch3:		%{name}-makefile-fix.patch
+Patch4:		%{name}-tempnam.patch
 URL:		http://www.instinct.org/elm/
 BuildRequires:	ncurses-devel >= 5.0
 Requires:	metamail
@@ -90,10 +89,9 @@ Elm все ще використовується деякими його шан�
 %setup -q -n %{name}%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+%patch2 -p0
 %patch3 -p0
-%patch4 -p0
-#%patch5 -p1
+#%%patch4 -p1
 
 %build
 mkdir -p bin
