@@ -19,6 +19,7 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Patch0:		%{name}-config.patch.gz
+# Patch0-md5:	34fe46be8ac9e3861aebd8388071154d
 Patch1:		%{name}-security.patch
 Patch2:		%{name}-no-static-libcrypt.patch
 Patch3:		%{name}-makefile-fix.patch
