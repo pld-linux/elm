@@ -88,10 +88,10 @@ Elm все ще використовується деякими його шан�
 
 %prep
 %setup -q -n %{name}%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p0
-%patch3 -p0
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p0
+%patch -P3 -p0
 #%%patch4 -p1
 
 %build
